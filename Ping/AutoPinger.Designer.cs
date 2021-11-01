@@ -55,7 +55,7 @@ namespace Ping
             this.IPTextBox.Name = "IPTextBox";
             this.IPTextBox.Size = new System.Drawing.Size(436, 40);
             this.IPTextBox.TabIndex = 3;
-            this.IPTextBox.Text = "10.200.34.101";
+            this.IPTextBox.Text = "192.168.10.10";
             this.IPTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ResponseTextBox
