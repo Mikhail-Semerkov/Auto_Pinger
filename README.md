@@ -2,4 +2,4 @@
 
 
 <p align="center">
-  <img src="https://github.com/Mikhail-Semerkov/Korm_TCP_Client_Mobile/blob/master/image_korm_tcp_client_mobile.jpg" /></p>
+  <img src="https://github.com/Mikhail-Semerkov/Auto_Pinger/blob/master/image_auto_pinger_1.jpg" /></p>
