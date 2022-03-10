@@ -35,6 +35,7 @@ namespace Ping
             this.PingTimer = new System.Windows.Forms.Timer(this.components);
             this.OnPingRButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_sound = new System.Windows.Forms.CheckBox();
             this.PoVerhOkonCheckBox = new System.Windows.Forms.CheckBox();
             this.OffPingRButton = new System.Windows.Forms.RadioButton();
             this.ClearButton = new System.Windows.Forms.Button();
@@ -81,7 +82,7 @@ namespace Ping
             this.OnPingRButton.AutoSize = true;
             this.OnPingRButton.BackColor = System.Drawing.Color.Transparent;
             this.OnPingRButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.OnPingRButton.Location = new System.Drawing.Point(67, 9);
+            this.OnPingRButton.Location = new System.Drawing.Point(6, 10);
             this.OnPingRButton.Name = "OnPingRButton";
             this.OnPingRButton.Size = new System.Drawing.Size(74, 17);
             this.OnPingRButton.TabIndex = 4;
@@ -90,6 +91,7 @@ namespace Ping
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox_sound);
             this.groupBox1.Controls.Add(this.PoVerhOkonCheckBox);
             this.groupBox1.Controls.Add(this.OffPingRButton);
             this.groupBox1.Controls.Add(this.OnPingRButton);
@@ -100,10 +102,21 @@ namespace Ping
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // checkBox_sound
+            // 
+            this.checkBox_sound.AutoSize = true;
+            this.checkBox_sound.Location = new System.Drawing.Point(380, 11);
+            this.checkBox_sound.Name = "checkBox_sound";
+            this.checkBox_sound.Size = new System.Drawing.Size(50, 17);
+            this.checkBox_sound.TabIndex = 7;
+            this.checkBox_sound.Text = "Звук";
+            this.checkBox_sound.UseVisualStyleBackColor = true;
+            this.checkBox_sound.CheckedChanged += new System.EventHandler(this.checked_sound);
+            // 
             // PoVerhOkonCheckBox
             // 
             this.PoVerhOkonCheckBox.AutoSize = true;
-            this.PoVerhOkonCheckBox.Location = new System.Drawing.Point(245, 10);
+            this.PoVerhOkonCheckBox.Location = new System.Drawing.Point(218, 10);
             this.PoVerhOkonCheckBox.Name = "PoVerhOkonCheckBox";
             this.PoVerhOkonCheckBox.Size = new System.Drawing.Size(156, 17);
             this.PoVerhOkonCheckBox.TabIndex = 6;
@@ -116,7 +129,7 @@ namespace Ping
             this.OffPingRButton.AutoSize = true;
             this.OffPingRButton.BackColor = System.Drawing.Color.Transparent;
             this.OffPingRButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.OffPingRButton.Location = new System.Drawing.Point(147, 9);
+            this.OffPingRButton.Location = new System.Drawing.Point(86, 10);
             this.OffPingRButton.Name = "OffPingRButton";
             this.OffPingRButton.Size = new System.Drawing.Size(82, 17);
             this.OffPingRButton.TabIndex = 5;
@@ -228,6 +241,7 @@ namespace Ping
         private System.Windows.Forms.Label Zaderjka_label;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label_ip_adrr;
+        private System.Windows.Forms.CheckBox checkBox_sound;
     }
 }
 

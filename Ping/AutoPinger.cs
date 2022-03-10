@@ -8,6 +8,7 @@ using Microsoft.Win32;
 using System.Net;
 using System.Collections.Generic;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Media;
 
 namespace Ping
 {
@@ -25,6 +26,10 @@ namespace Ping
         String Time_Ping_Sessions;
         int Hours, Minutes, Seconds;
         String str_hourse, str_minutes, str_seconds;
+
+
+        SoundPlayer sp;
+        
 
 
 
@@ -278,6 +283,10 @@ namespace Ping
                     forms_log_gonnect_object.LogConnectTextBox.Text += "Connected (" + "IP: " + IPTextBox.Text + ") [" + DateTime.Now.ToString("dd MMMM yyyy") + ", " + DateTime.Now.ToString("HH:mm:ss") + "]\r\n";
 
                     ping_sost_flag = true;
+
+                    var path = $"{Environment.CurrentDirectory}\\Sound\\ping_on.wav";
+                    sp = new SoundPlayer(path);
+                    sp.Play();
                 }
 
             }
@@ -291,12 +300,18 @@ namespace Ping
                 Zaderjka_label.Visible = false;
                 IPTextBox.BackColor = Color.FromArgb(255, 0, 0);
 
+                var path = $"{Environment.CurrentDirectory}\\Sound\\ping_off.wav";
+                sp = new SoundPlayer(path);
+                sp.Play();
+
                 if (ping_sost_flag == true)
                 {
 
                     forms_log_gonnect_object.LogConnectTextBox.Text += "Error connect("+ "IP: " + IPTextBox.Text + ") [" + DateTime.Now.ToString("dd MMMM yyyy") + ", " + DateTime.Now.ToString("HH:mm:ss") + "]\r\n";
 
                     ping_sost_flag = false;
+
+
                 }
 
             }
@@ -338,6 +353,29 @@ namespace Ping
             key.Close();
 
 
+        }
+
+        private void checked_sound(object sender, EventArgs e)
+        {
+
+            
+
+
+            if (checkBox_sound.Checked == true)
+            {
+
+                var path = $"{Environment.CurrentDirectory}\\Sound\\ping_on.wav";
+                sp = new SoundPlayer(path);
+                sp.Play();
+            }
+            else
+            {
+
+                var path = $"{Environment.CurrentDirectory}\\Sound\\ping_off.wav";
+                sp = new SoundPlayer(path);
+                sp.Play();
+
+            }
         }
 
         ////////Загрузка с реестра при входе в программу/////////
